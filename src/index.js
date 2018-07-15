@@ -15,7 +15,9 @@ injectGlobal`
     font-family: 'Rubik', sans-serif;
   }
 
-  input {
+  input,
+  select,
+  option {
     font-family: 'Rubik', sans-serif;
   }
 `;

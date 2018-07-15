@@ -1,16 +1,19 @@
 const theme = {};
+
 theme.colors = {
-  blue: "#0000ff",
-  orange: "#ff6600",
-  yellow: "#ffff00",
-  purple: "#440088"
+  grass: "#8ED680",
+  green: "#12977A",
+  teal: "#0B6482",
+  navy: "#092370",
+  lightgrey: "#cccccc"
 };
 
 theme.wordTypes = {
-  noun: theme.colors.blue,
-  verb: theme.colors.orange,
-  adverb: theme.colors.yellow,
-  adjective: theme.colors.purple
+  noun: theme.colors.grass,
+  verb: theme.colors.green,
+  adverb: theme.colors.teal,
+  adjective: theme.colors.navy,
+  none: theme.colors.lightgrey
 };
 
 export default theme;

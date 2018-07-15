@@ -8,11 +8,12 @@ const Wrapper = styled.div`
 
 const Heading = styled.h1`
   color: purple;
+  margin: 0;
 `;
 
 const Header = () => (
   <Wrapper>
-    <Heading>Andrea</Heading>
+    <Heading>Sentence</Heading>
   </Wrapper>
 );
 

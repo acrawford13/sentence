@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: baseline;
+  align-items: top;
 `;
 
 const Sentence = ({ children }) => (
