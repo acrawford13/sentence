@@ -7,12 +7,17 @@ import theme from "./components/themes/theme";
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Rubik');
+  
+  * {
+    box-sizing: border-box;
+  }
 
   html,
   body {
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
+    background-color: #f2f2f2;
   }
 
   input,

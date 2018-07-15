@@ -10,6 +10,7 @@ const Card = styled.div`
   padding: 0.5rem 0.75rem;
   margin: 0.25rem;
   border-radius: 2px;
+  background-color: #fefefe;
 `;
 
 // const Card = ({ children }) => <Wrapper>{children}</Wrapper>;

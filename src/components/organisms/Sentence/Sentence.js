@@ -8,11 +8,21 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: top;
+  max-width: 70vw;
+  justify-self: center;
+  padding: 2rem 0;
 `;
 
-const Sentence = ({ children }) => (
+const Sentence = ({ words, handlePropertyChange }) => (
   <Wrapper>
-    {children.split(/\s/).map(word => word && <Word>{word}</Word>)}
+    {words.map(
+      word =>
+        word && (
+          <Word handlePropertyChange={handlePropertyChange} word={word}>
+            {word.value}
+          </Word>
+        )
+    )}
   </Wrapper>
 );
 
