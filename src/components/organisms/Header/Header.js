@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   background-color: #fafafa;
@@ -10,6 +10,10 @@ const Heading = styled.h1`
   color: purple;
 `;
 
-const Header = () => <Wrapper><Heading>Andrea</Heading></Wrapper>;
+const Header = () => (
+  <Wrapper>
+    <Heading>Andrea</Heading>
+  </Wrapper>
+);
 
 export default Header;

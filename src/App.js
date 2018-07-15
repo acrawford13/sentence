@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from "./components/organisms/Header/Header";
 import Sentence from "./components/organisms/Sentence/Sentence";
+import Input from "./components/atoms/Input/Input";
+import SentenceInput from "./components/molecules/SentenceInput/SentenceInput";
 
 class App extends Component {
   constructor(props) {
@@ -19,13 +21,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div>
-          <input
-            type="text"
-            onChange={this.handleChange}
-            value={this.state.sentence}
-          />
-        </div>
+        <SentenceInput
+          onChange={this.handleChange}
+          value={this.state.sentence}
+        />
         <Sentence>{this.state.sentence}</Sentence>
       </div>
     );

@@ -11,7 +11,9 @@ const Wrapper = styled.div`
 `;
 
 const Sentence = ({ children }) => (
-  <Wrapper>{children.split(/\b\s?/).map(word => <Word>{word}</Word>)}</Wrapper>
+  <Wrapper>
+    {children.split(/\s/).map(word => word && <Word>{word}</Word>)}
+  </Wrapper>
 );
 
 Sentence.propTypes = {
