@@ -1,10 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import { injectGlobal } from 'styled-components';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import registerServiceWorker from "./registerServiceWorker";
+import { injectGlobal } from "styled-components";
 
 injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Rubik');
+
   html,
   body {
     margin: 0;
@@ -12,5 +14,5 @@ injectGlobal`
   }
 `;
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 registerServiceWorker();
