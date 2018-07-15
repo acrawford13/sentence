@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sentence: "Once upon a time"
+      sentence:
+        "Jednou v zimě, když ležel venku sníh a mrzlo jen praštilo, vzpomněla si Holena, že by chtěla fialky."
     };
     this.handleChange = this.handleChange.bind(this);
   }

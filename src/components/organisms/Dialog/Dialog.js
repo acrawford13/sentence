@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Card from "../../atoms/Card/Card";
 import Select from "../../atoms/Select/Select";
+import Input from "../../atoms/Input/Input";
 
 const Wrapper = styled.div`
   border-top: 1px solid #ccc;
@@ -33,7 +34,7 @@ const WordType = styled.span`
 
 const Dialog = ({
   word,
-  onTypeChange,
+  handlePropertyChange,
   toggleTypeChange,
   typeChangeEnabled
 }) => (
@@ -46,13 +47,22 @@ const Dialog = ({
       {typeChangeEnabled && (
         <Select
           value={word.type}
-          options={["verb", "noun", "adjective", "adverb"]}
-          onChange={onTypeChange}
+          options={["verb", "noun", "adjective", "adverb", "preposition"]}
+          onChange={event => handlePropertyChange("type", event)}
           onClick={e => {
             e.stopPropagation();
           }}
         />
       )}
+    </div>
+    <div>
+      <Input
+        value={word.definition}
+        onChange={event => handlePropertyChange("definition", event)}
+        onClick={e => {
+          e.stopPropagation();
+        }}
+      />
     </div>
   </Wrapper>
 );

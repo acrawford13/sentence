@@ -17,7 +17,7 @@ class Word extends Component {
       showDialog: false,
       typeChangeEnabled: false
     };
-    this.handleTypeChange = this.handleTypeChange.bind(this);
+    this.handlePropertyChange = this.handlePropertyChange.bind(this);
     this.toggleTypeChange = this.toggleTypeChange.bind(this);
   }
 
@@ -31,14 +31,16 @@ class Word extends Component {
         return "adjective";
       case "d":
         return "adverb";
+      case "p":
+        return "preposition";
       default:
         return;
     }
   }
 
-  handleTypeChange(event) {
+  handlePropertyChange(property, event) {
     event.preventDefault();
-    this.setState({ type: event.target.value });
+    this.setState({ [property]: event.target.value });
   }
 
   toggleTypeChange(event) {
@@ -59,7 +61,7 @@ class Word extends Component {
             })
           }
           onKeyPress={event => {
-            this.handleTypeChange({
+            this.handlePropertyChange("type", {
               ...event,
               target: { value: this.convertKeyCode(event.key) },
               preventDefault: () => {}
@@ -69,10 +71,14 @@ class Word extends Component {
           {this.props.children}
           {this.state.showDialog && (
             <Dialog
-              onTypeChange={this.handleTypeChange}
+              onPropertyChange={this.handlePropertyChange}
               toggleTypeChange={this.toggleTypeChange}
-              word={{ type: this.state.type }}
               typeChangeEnabled={this.state.typeChangeEnabled}
+              handlePropertyChange={this.handlePropertyChange}
+              word={{
+                type: this.state.type,
+                definition: this.state.definition
+              }}
             />
           )}
         </WordCard>

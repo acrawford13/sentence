@@ -13,6 +13,7 @@ theme.wordTypes = {
   verb: theme.colors.green,
   adverb: theme.colors.teal,
   adjective: theme.colors.navy,
+  preposition: theme.colors.navy,
   none: theme.colors.lightgrey
 };
 

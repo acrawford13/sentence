@@ -7,12 +7,16 @@ const StyledInput = styled.input`
   width: 100%;
 `;
 
-const Input = ({ value, onChange, type, placeholder }) => (
+const Input = ({ value, onClick, onChange, type, placeholder }) => (
   <StyledInput
     value={value}
     onChange={onChange}
     type={type}
     placeholder={placeholder}
+    onClick={onClick}
+    onKeyPress={e => {
+      e.stopPropagation();
+    }}
   />
 );
 
