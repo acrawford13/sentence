@@ -22,7 +22,9 @@ injectGlobal`
 
   input,
   select,
-  option {
+  option,
+  button,
+  textarea {
     font-family: 'Rubik', sans-serif;
   }
 `;

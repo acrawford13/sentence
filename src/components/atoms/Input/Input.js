@@ -5,19 +5,37 @@ import PropTypes from "prop-types";
 const StyledInput = styled.input`
   padding: 0.5rem 0.75rem;
   width: 100%;
+  font-size: 1rem;
+  border: none;
   &:focus {
     outline: none;
   }
 `;
 
-const Input = ({ value, onClick, onChange, autofocus, type, placeholder }) => (
+const StyledTextarea = styled.textarea`
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  min-height: 1rem;
+  resize: none;
+  height: 100%;
+  border: none;
+`;
+
+export const Textarea = props => (
+  <StyledTextarea
+    {...props}
+    rows="1"
+    onKeyPress={e => {
+      e.stopPropagation();
+    }}
+  />
+);
+
+export const Input = props => (
   <StyledInput
-    value={value}
-    onChange={onChange}
-    type={type}
-    placeholder={placeholder}
-    onClick={onClick}
-    autoFocus={autofocus}
+    {...props}
     onKeyPress={e => {
       e.stopPropagation();
     }}

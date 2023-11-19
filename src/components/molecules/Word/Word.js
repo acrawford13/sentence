@@ -6,8 +6,12 @@ import Dialog from "../../organisms/Dialog/Dialog";
 
 const WordCard = Card.extend`
   cursor: pointer;
+  color: ${props => !props.definition && "red"};
   border-top: 3px solid
-    ${props => props.theme.wordTypes[props.type] || "transparent"};
+    ${props =>
+      !props.definition
+        ? "red"
+        : props.theme.wordTypes[props.type] || "transparent"};
   &:focus {
     outline: none;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
@@ -68,6 +72,7 @@ class Word extends Component {
         <WordCard
           tabIndex="0"
           type={this.props.word.type}
+          definition={this.props.word.definition}
           onClick={() =>
             this.setState({
               showDialog: !this.state.showDialog
@@ -94,9 +99,10 @@ class Word extends Component {
             {(this.props.word.gender || this.props.word.case) && (
               <Details>
                 {[
-                  this.props.word.gender
-                    .replace("feminine", "♀")
-                    .replace("masculine", "♂"),
+                  this.props.word.gender &&
+                    this.props.word.gender
+                      .replace("feminine", "♀")
+                      .replace("masculine", "♂"),
                   this.props.word.case
                 ]
                   .filter(item => item)

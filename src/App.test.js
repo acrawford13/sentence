@@ -1,9 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { splitSentence } from "./App";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe("splitSentence", () => {
+  it("splits a sentence into an ordered map of words", () => {
+    expect(splitSentence("Hello").toJS()).toEqual({
+      0: {
+        cases: {},
+        id: "0",
+        value: "Hello"
+      }
+    });
+  });
 });

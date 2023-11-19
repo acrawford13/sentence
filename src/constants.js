@@ -7,3 +7,14 @@ export const CASES = [
   "instrumental",
   "vocative"
 ];
+
+export const TYPES = [
+  "verb",
+  "noun",
+  "adjective",
+  "adverb",
+  "preposition",
+  "pronoun",
+  "determiner",
+  "conjunction"
+];

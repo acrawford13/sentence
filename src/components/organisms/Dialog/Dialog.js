@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
-import Card from "../../atoms/Card/Card";
 import Select from "../../atoms/Select/Select";
 import Input from "../../atoms/Input/Input";
 import Noun from "./DialogTypes/Noun";
+import Verb from "./DialogTypes/Verb";
 import List from "./components/List";
 import Item from "./components/Item";
+
+import { TYPES } from "constants.js";
 
 const Wrapper = styled.div`
   border-top: 1px solid #ccc;
@@ -24,6 +25,7 @@ const getDialogOptions = (type, props) => {
     case "noun":
       return <Noun {...props} />;
     case "verb":
+      return <Verb {...props} />;
     case "adjective":
     case "adverb":
     default:
@@ -68,7 +70,7 @@ class Dialog extends Component {
             {this.state.typeChangeEnabled ? (
               <Select
                 value={this.props.word.type}
-                options={["verb", "noun", "adjective", "adverb", "preposition"]}
+                options={TYPES}
                 onChange={event =>
                   this.props.handlePropertyChange(
                     "type",

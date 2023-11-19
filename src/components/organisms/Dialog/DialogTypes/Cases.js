@@ -1,8 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import Item from "../components/Item";
 import { CASES } from "../../../../constants";
-import Input from "../../../atoms/Input/Input";
+import Input from "components/atoms/Input/Input";
 
 const Cases = ({ word, onChange }) =>
   CASES.filter(item => item !== word.case).map(item => (
